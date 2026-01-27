@@ -7,11 +7,10 @@ class Plant:
 
 class Flower(Plant):
     def __init__(
-        self, name: str, height: int, age: int, color: str, bloom: str
+        self, name: str, height: int, age: int, color: str
     ) -> None:
         super().__init__(name, height, age)
         self.color: str = color
-        self.bloom_season: str = bloom
 
     def bloom(self) -> str:
         return f"{self.name} is blooming beautifully!"
@@ -64,14 +63,17 @@ class Vegetable(Plant):
 
 def main() -> None:
     print("=== Garden Plant Types ===")
-
-    rose = Flower("Rose", 25, 30, "Red", "Spring")
-
+    # Flowers
+    rose = Flower("Rose", 25, 30, "Red")
+    daisy = Flower("daisy", 15, 10, "white")
+    # Trees
     oak = Tree("Oak", 500, 1825, 50)
+    pine = Tree("Pine", 800, 3000, 50)
 
+    # vegetables
     tomato = Vegetable("Tomato", 80, 90, "Summer", "Vitamin C")
-
-    plants = [rose, oak, tomato]
+    carrot = Vegetable("Carrot", 20, 45, "Autumn", "Vitamin A")
+    plants = [rose, oak, tomato, daisy, pine, carrot]
 
     for plant in plants:
         print(plant.get_info())
