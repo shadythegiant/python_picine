@@ -75,7 +75,6 @@ class GardenManager:
     # Manager setup :
     def __init__(self):
         self.gardens: dict = {}
-    # class Method : factory pattern
 
     @classmethod
     def create_garden_network(cls):
@@ -86,7 +85,6 @@ class GardenManager:
     def validate_height(height: int) -> bool:
         return height > 0
 
-    # instane methods : the logic
     def add_plant(self, owner: str, plant: Plant) -> None:
         if owner not in self.gardens:
             self.gardens[owner] = []
@@ -105,7 +103,6 @@ class GardenManager:
         print("Plants in garden:")
         for plant in plants:
             print(f"- {plant.get_info()}")
-        # calculation logic
         count = len(plants)
         # assuming 1cm of growth
         growth = count * 1
@@ -113,21 +110,17 @@ class GardenManager:
         # types
         types_str = self.GardenStats.calculate_types(plants)
         print(f"Plant types: {types_str}")
-        # using static method
         valid_height = self.validate_height(plants[0].height if plants else 0)
         print(f"Height validation test: {valid_height}")
-        # calculating scores
         alice_score = self.GardenStats.calculate_score(
             self.gardens.get("Alice", []))
         bob_score = self.GardenStats.calculate_score(
             self.gardens.get("Bob", []))
-
         print(f"Garden scores - Alice: {alice_score}, Bob: {bob_score}")
         print(f"Total gardens managed: {len(self.gardens)}")
 
 
 def main():
-    # creating a manager
     manager = GardenManager.create_garden_network()
     # setting up alice garden
     oak = Plant("Oak Tree", 100)
@@ -138,7 +131,6 @@ def main():
     manager.add_plant("Alice", oak)
     manager.add_plant("Alice", rose)
     manager.add_plant("Alice", sunflower)
-    # 3. Grow Plants
     manager.grow_all("Alice")
 
     manager.add_plant("Bob", Plant("Bush", 82))
