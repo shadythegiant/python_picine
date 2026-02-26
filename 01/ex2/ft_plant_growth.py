@@ -6,9 +6,6 @@ class Plant:
         self.last_growth: int = 0
 
     def get_info(self) -> None:
-        """
-        Print current plant status.
-        """
         print(f"{self.name.capitalize()}: {self.height}cm, "
               f"{self.age} days old")
 
