@@ -127,14 +127,11 @@ def main():
     rose = FloweringPlant("Rose", 25, "red")
     sunflower = PrizeFlower("Sunflower", 50, "yellow", 10)
     # adding plants to the manager
-
     manager.add_plant("Alice", oak)
     manager.add_plant("Alice", rose)
     manager.add_plant("Alice", sunflower)
     manager.grow_all("Alice")
-
     manager.add_plant("Bob", Plant("Bush", 82))
-
     manager.generate_report("Alice")
 
 
