@@ -25,7 +25,8 @@ class FloweringPlant(Plant):
 
     def get_info(self) -> str:
         status = "blooming" if self.blooming else "not blooming"
-        return f"{self.name}: {self.height}cm, {self.color} flowers ({status})"
+        base = super().get_info()
+        return f"{base}, {self.color} flowers ({status})"
 
 
 class PrizeFlower(FloweringPlant):
@@ -125,7 +126,6 @@ class GardenManager:
         print(f"Total gardens managed: {len(self.gardens)}")
 
 
-# MAIN-EXECUTION
 def main():
     # creating a manager
     manager = GardenManager.create_garden_network()

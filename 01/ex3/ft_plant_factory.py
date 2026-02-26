@@ -24,6 +24,7 @@ def main() -> None:
     print("=== Plant Factory Output ===")
     for plant in plants:
         plant.get_info()
+    print("\n")
     print(f"Total plants created: {len(plants)}")
 
 
