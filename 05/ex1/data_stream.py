@@ -53,7 +53,10 @@ class TransactionStream(DataStream):
                            "buy" else -x["amount"] for x in valid_tx)
 
             self.processed_count += len(valid_tx)
-            return f"Transaction analysis: {len(valid_tx)} operations, net flow: {net_flow:+d} units"
+            return (
+                f"Transaction analysis: {len(valid_tx)} operations, "
+                f"net flow: {net_flow:+d} units"
+            )
         except Exception:
             self.error_count += 1
             return "Transaction analysis: Error processing batch"
