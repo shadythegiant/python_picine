@@ -16,7 +16,7 @@ def run_tournament(
     name: str, display_str: str, opponents: List[Opponent]
 ) -> None:
     print(name)
-    print(display_str)  # Hardcoded print
+    print(display_str)
     print("*** Tournament ***")
     print(f"{len(opponents)} opponents involved")
 
