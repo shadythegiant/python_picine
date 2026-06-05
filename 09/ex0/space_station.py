@@ -18,7 +18,7 @@ class SpaceStation(BaseModel):
 
     # boolean and Optional
     is_operational: bool = Field(default=True)
-    notes: Optional[str] = Field(default=None)
+    notes: Optional[str] = Field(default=None, max_length=200)
 
 
 def main() -> None:

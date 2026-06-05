@@ -31,8 +31,11 @@ class AlienContact(BaseModel):
         # 2 Physical contact must be verified
         if self.contact_type == ContactType.physical and not self.is_verified:
             raise ValueError("Physical contact must be verified")
-        # 3 -Telepathic contact requires at least 3 witnesses
-        if self.contact_type == ContactType.telepathic and self.witness_count < 3:
+        # 3 - Telepathic contact requires at least 3 witnesses
+        if (
+            self.contact_type == ContactType.telepathic
+            and self.witness_count < 3
+        ):
             raise ValueError(
                 "Telepathic contact requires at least 3 witnesses")
         # 4. Strong signals (>7.0) should include received messages
